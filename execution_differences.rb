@@ -21,7 +21,12 @@ def my_min_pro(list) #O(n)
 end
 
 def largest_contiguous_subsum(list)
-
-    
-
+    curr_sum = 0 
+    largest = 0 
+    list.each do |el|
+        curr_sum += el
+        curr_sum = 0 if curr_sum < 0
+        largest = curr_sum if curr_sum > largest
+    end
+    largest 
 end
